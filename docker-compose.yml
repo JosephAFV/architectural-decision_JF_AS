@@ -1,0 +1,15 @@
+services:
+  academic-system:
+    build: .
+    container_name: academic-system-app
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DB_PATH=/app/database/academic.db
+    volumes:
+      - sqlite_data:/app/database
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:

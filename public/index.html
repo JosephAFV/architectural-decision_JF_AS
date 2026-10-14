@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Academic Management System</h1>
+  <p>Software Architecture Redesign: Layered Architecture, Low Coupling, Relational Database & Docker</p>
+</header>
+
+<main>
+
+  <!-- ===================== -->
+  <!-- STUDENTS -->
+  <!-- ===================== -->
+  <section class="panel">
+    <h2>Students</h2>
+
+    <form id="formStudent">
+      <input id="studentName" placeholder="Full Name" required>
+      <input id="studentMajor" placeholder="Major / Degree Program" required>
+      <input id="studentSemester" type="number" min="1" max="12" placeholder="Semester" required>
+      <button type="submit">Add Student</button>
+    </form>
+
+    <div class="buscador">
+      <input id="searchStudentInput" placeholder="Search student by name or major...">
+      <button type="button" id="btnSearchStudent">Search</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Major</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody id="tableStudents"></tbody>
+    </table>
+  </section>
+
+  <!-- ===================== -->
+  <!-- COURSES -->
+  <!-- ===================== -->
+  <section class="panel">
+    <h2>Courses</h2>
+
+    <form id="formCourse">
+      <input id="courseName" placeholder="Course Name" required>
+      <input id="courseTeacher" placeholder="Instructor / Teacher" required>
+      <input id="courseCapacity" type="number" min="1" placeholder="Capacity" required>
+      <button type="submit">Add Course</button>
+    </form>
+
+    <div class="buscador">
+      <input id="searchCourseInput" placeholder="Search course by name or instructor...">
+      <button type="button" id="btnSearchCourse">Search</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Course Name</th>
+          <th>Instructor</th>
+          <th>Available Seats</th>
+        </tr>
+      </thead>
+      <tbody id="tableCourses"></tbody>
+    </table>
+  </section>
+
+  <!-- ===================== -->
+  <!-- ENROLLMENTS -->
+  <!-- ===================== -->
+  <section class="panel">
+    <h2>Enrollments</h2>
+
+    <form id="formEnrollment">
+      <select id="selectStudent" required></select>
+      <select id="selectCourse" required></select>
+      <button type="submit">Enroll Student</button>
+    </form>
+
+    <p id="enrollmentMessage"></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student</th>
+          <th>Course</th>
+        </tr>
+      </thead>
+      <tbody id="tableEnrollments"></tbody>
+    </table>
+  </section>
+
+  <!-- ===================== -->
+  <!-- REPORT -->
+  <!-- ===================== -->
+  <section class="panel">
+    <h2>Academic Report</h2>
+    <button id="btnGenerateReport">Generate Report</button>
+    <div id="reportContainer"></div>
+  </section>
+
+</main>
+
+<footer>
+  Software Architecture Practical Assignment — Enhanced System with ADRs
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

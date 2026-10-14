@@ -1,0 +1,12 @@
+{
+  "name": "academic-management-system",
+  "version": "2.0.0",
+  "description": "University Enrollment System enhanced by applying ADRs (Layered Architecture, Low Coupling, SQLite Relational Database, and Docker)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
